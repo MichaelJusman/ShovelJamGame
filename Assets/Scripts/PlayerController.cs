@@ -8,7 +8,7 @@ public enum Facing
     Right, 
     Key
 }
-public class PlayerController : MonoBehaviour
+public class PlayerController : Singleton<PlayerController>
 {
     [Header("Movement Variables")]
     public Facing Direction;
@@ -72,14 +72,19 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("Up", false);
         LookAtDirection(FrontRef, Facing.Key);
         OnKey = true;
+        _GM.inGame = true;
+        _GM.GameFailed();
     }
 
     public void GoUp()
     {
         anim.SetBool("Up", true);
         OnKey = false;
+        _GM.inGame = false;
+        _GM.FailGame();
     }
 
+    //directional looking
     public void LookAtDirection(GameObject _Ref, Facing dir)
     {
         CurrentRef = _Ref;

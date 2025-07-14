@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UnityEditor.PlayerSettings;
 
-public class RingMinigame : MonoBehaviour
+public class RingMinigame : GameBehaiour
 {
     public float spinSpeed;
     public GameObject Spinner;
@@ -71,7 +71,7 @@ public class RingMinigame : MonoBehaviour
 
         Spinner.transform.Rotate(0, 0, spinSpeed * Time.deltaTime);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        /*if (Input.GetKeyDown(KeyCode.Space))
         { 
             if (Pressable == true)
             {
@@ -80,16 +80,30 @@ public class RingMinigame : MonoBehaviour
             {
                 Fail();
             }
+        }*/
+    }
+
+    public void check()
+    {
+        if (Pressable == true)
+        {
+            Succeed();
+        }
+        else
+        {
+            Fail();
         }
     }
 
     public void Succeed()
     {
-        Instantiate(win, transform.position, transform.rotation, transform.parent);
+        //Instantiate(win, transform.position, transform.rotation, transform.parent);
+        _GM.GameBeaten();
         Destroy(gameObject);
     }
     public void Fail()
     {
-        
+        _GM.GameFailed();
+        Destroy(gameObject);
     }
 }
