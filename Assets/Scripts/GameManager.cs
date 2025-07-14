@@ -19,6 +19,7 @@ public class GameManager : Singleton<GameManager>
     public bool inGame;
 
     public float completed;
+    public float Difficulty;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -40,6 +41,7 @@ public class GameManager : Singleton<GameManager>
         {
             GameObject dsa = Instantiate(ringOBJ, transform.position, transform.rotation, canvass.transform);
             dsa.GetComponent<RingMinigame>().Point = CurrentPoint;
+            dsa.GetComponent<RingMinigame>().spinSpeed += (Difficulty * 2);
             activeGame = dsa;
         } 
     }
@@ -47,6 +49,7 @@ public class GameManager : Singleton<GameManager>
     public void GameBeaten()
     {
         completed += 1;
+        Difficulty += 1;
         StartCoroutine(NewGame(ringOBJ, 1));
     }
 

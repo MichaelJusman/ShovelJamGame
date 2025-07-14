@@ -28,7 +28,7 @@ public class RingMinigame : GameBehaiour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        float ran = Random.Range(5, 180);
+        float ran = Random.Range(10, 180);
 
         Min = 360 - ran;
 
