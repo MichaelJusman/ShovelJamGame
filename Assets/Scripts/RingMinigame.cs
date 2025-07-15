@@ -105,6 +105,11 @@ public class RingMinigame : GameBehaiour
         _GM.GameBeaten();
         StartCoroutine(DieTimer());
         Follower.SetActive(false);
+
+        if (_TT.ID == 1)
+        {
+            _TT.Advance();
+        }
     }
     public void Fail()
     {

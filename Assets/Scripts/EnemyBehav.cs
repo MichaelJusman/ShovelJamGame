@@ -36,6 +36,7 @@ public class EnemyBehav : Singleton<EnemyBehav>
 
     [Header("PositionPoints")]
     public GameObject JumpscareCamRef;
+    public Animator JumpScarer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -111,17 +112,22 @@ public class EnemyBehav : Singleton<EnemyBehav>
     public void kill()
     {
         print("youDied");
+        Model.SetActive(false);
     }
 
     public void GoAway()
     {
         Leaving = true;
         StartCoroutine(Leave());
+
+        if (_TT.ID == 3)
+        {
+            _TT.Advance();
+        }
     }
 
     IEnumerator Leave()
-    {
-        
+    {      
         //SummonMinigame();
         yield return new WaitForSeconds(1);
         peering = false;

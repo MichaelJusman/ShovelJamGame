@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class FlashLightBehav : GameBehaiour
 {
+    public bool drain;
+
     public GameObject FLight;
     public float lightDist;
     public float Dampning;
@@ -25,9 +27,14 @@ public class FlashLightBehav : GameBehaiour
 
         FLight.transform.rotation = Quaternion.FromToRotation(FLight.transform.forward, FLight.transform.position - pos) * FLight.transform.rotation;
 
-        if (_PC.FOn == true)
+        if (_PC.FOn == true && drain == true)
         {
             Battery -= 1 * Time.deltaTime;  
+
+            if (Battery < 0) 
+            {
+                _PC.flashOff();
+            }
         }
 
         BatteryUI.fillAmount = Battery / Battery2;

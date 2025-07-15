@@ -22,10 +22,14 @@ public class GameManager : Singleton<GameManager>
     public float Difficulty;
 
     public float winThresh = 20;
+
+    [Header("Win/Lose")]
+    public GameObject WinScreen;
+    public GameObject LoseScreen;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        StartCoroutine(NewGame(ringOBJ, 1));
+        //StartCoroutine(NewGame(ringOBJ, 1));
     }
 
     // Update is called once per frame
@@ -84,6 +88,6 @@ public class GameManager : Singleton<GameManager>
 
     public void PlayerLose()
     {
-
+        LoseScreen.SetActive(true);
     }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public enum Facing
 {
@@ -25,6 +26,9 @@ public class PlayerController : Singleton<PlayerController>
     [Header("FlashLight")]
     public FlashLightBehav FLB;
     public bool FOn;
+
+    [Header("Events")]
+    public UnityEvent getUpEvemt;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -85,6 +89,7 @@ public class PlayerController : Singleton<PlayerController>
         OnKey = false;
         _GM.inGame = false;
         _GM.FailGame();
+        getUpEvemt.Invoke();
     }
 
     //directional looking
