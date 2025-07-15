@@ -1,5 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Buffers.Text;
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using static UnityEditor.PlayerSettings;
 
 public class RingMinigame : GameBehaiour
@@ -99,11 +103,20 @@ public class RingMinigame : GameBehaiour
     {
         //Instantiate(win, transform.position, transform.rotation, transform.parent);
         _GM.GameBeaten();
-        Destroy(gameObject);
+        StartCoroutine(DieTimer());
+        Follower.SetActive(false);
     }
     public void Fail()
     {
         _GM.GameFailed();
+        StartCoroutine(DieTimer());
+        Follower.SetActive(false);
+    }
+
+    IEnumerator DieTimer()
+    {
+        yield return new WaitForSeconds(2);
         Destroy(gameObject);
+        yield return null;
     }
 }

@@ -20,6 +20,8 @@ public class GameManager : Singleton<GameManager>
 
     public float completed;
     public float Difficulty;
+
+    public float winThresh = 20;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -51,6 +53,11 @@ public class GameManager : Singleton<GameManager>
         completed += 1;
         Difficulty += 1;
         StartCoroutine(NewGame(ringOBJ, 1));
+
+        if (completed >= winThresh)
+        {
+            PlayerWin();
+        }
     }
 
     public void GameFailed()
@@ -68,5 +75,15 @@ public class GameManager : Singleton<GameManager>
     public void FailGame()
     {
         activeGame.GetComponent<GameFailer>().FailGame();
+    }
+
+    public void PlayerWin()
+    {
+
+    }
+
+    public void PlayerLose()
+    {
+
     }
 }

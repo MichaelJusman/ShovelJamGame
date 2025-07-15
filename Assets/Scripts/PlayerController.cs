@@ -24,6 +24,7 @@ public class PlayerController : Singleton<PlayerController>
 
     [Header("FlashLight")]
     public FlashLightBehav FLB;
+    public bool FOn;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -74,11 +75,13 @@ public class PlayerController : Singleton<PlayerController>
         OnKey = true;
         _GM.inGame = true;
         _GM.GameFailed();
+        flashOff();
     }
 
     public void GoUp()
     {
         anim.SetBool("Up", true);
+        LookAtDirection(FrontRef, Facing.Fowards);
         OnKey = false;
         _GM.inGame = false;
         _GM.FailGame();
@@ -106,5 +109,37 @@ public class PlayerController : Singleton<PlayerController>
     public void LookRight()
     {
         LookAtDirection(RightRef, Facing.Right);
+    }
+
+    /*public void toggleFlashlight()
+    {
+        FOn = !FOn;
+
+        if (FOn == true)
+        {
+            flashOn();
+        }
+        else
+        {
+            flashOff();
+        }
+    }*/
+    public void flashOn()
+    {
+        if (FLB.Battery > 0)
+        {
+            //print("on");
+            FLB.FLight.SetActive(true);
+            FOn = true;
+        } else
+        {
+            flashOff();
+        }       
+    }
+    public void flashOff()
+    {
+        //print("off");
+        FLB.FLight.SetActive(false);
+        FOn = false;
     }
 }
