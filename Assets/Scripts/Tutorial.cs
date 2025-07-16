@@ -73,7 +73,11 @@ public class Tutorial : Singleton<Tutorial>
     // Update is called once per frame
     void Update()
     {
-        
+        //test
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            PlayerPrefs.SetFloat("hasCompletedTutorial", 0);
+        }
     }
 
     public void Advance()
