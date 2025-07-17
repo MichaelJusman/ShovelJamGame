@@ -39,6 +39,7 @@ public class EnemyBehav : Singleton<EnemyBehav>
     public GameObject Jumpscare;
     public GameObject PlayerCam;
     public Animator JumpScarer;
+    public Animator car;
 
     public GameObject Menu;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -120,13 +121,27 @@ public class EnemyBehav : Singleton<EnemyBehav>
         print("youDied");
         Model.SetActive(false);
         Menu.SetActive(false);
-        Jumpscare.SetActive(true);
+        StartCoroutine(PlayScare());
+        //Jumpscare.SetActive(true);
 
+        car.Play("GuyInCar");
+
+        /*PlayerCam.transform.parent = JumpscareCamRef.transform;
+        PlayerCam.transform.position = JumpscareCamRef.transform.position;
+        PlayerCam.transform.rotation = JumpscareCamRef.transform.rotation;
+        Destroy(_GM.activeGame);*/
+    }
+    IEnumerator PlayScare()
+    {
+
+        yield return new WaitForSeconds(1);
+        Jumpscare.SetActive(true);
         PlayerCam.transform.parent = JumpscareCamRef.transform;
         PlayerCam.transform.position = JumpscareCamRef.transform.position;
         PlayerCam.transform.rotation = JumpscareCamRef.transform.rotation;
         Destroy(_GM.activeGame);
     }
+
 
     public void GoAway()
     {
