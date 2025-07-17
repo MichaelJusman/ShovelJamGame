@@ -74,10 +74,10 @@ public class Tutorial : Singleton<Tutorial>
     void Update()
     {
         //test
-        if (Input.GetKeyDown(KeyCode.P))
+        /*if (Input.GetKeyDown(KeyCode.P))
         {
             PlayerPrefs.SetFloat("hasCompletedTutorial", 0);
-        }
+        }*/
     }
 
     public void Advance()
