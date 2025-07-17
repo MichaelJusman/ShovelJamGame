@@ -118,7 +118,7 @@ public class EnemyBehav : Singleton<EnemyBehav>
     public void kill()
     {
         active = false;
-        print("youDied");
+        //print("youDied");
         Model.SetActive(false);
         Menu.SetActive(false);
         StartCoroutine(PlayScare());

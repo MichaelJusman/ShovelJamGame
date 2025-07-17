@@ -83,7 +83,7 @@ public class GameManager : Singleton<GameManager>
 
     public void PlayerWin()
     {
-
+        _EB.active = false;
     }
 
     public void PlayerLose()
