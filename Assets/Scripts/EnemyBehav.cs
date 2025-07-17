@@ -34,15 +34,20 @@ public class EnemyBehav : Singleton<EnemyBehav>
     public GameObject Left;
     public GameObject Right;
 
-    [Header("PositionPoints")]
+    [Header("Jumpscare")]
     public GameObject JumpscareCamRef;
+    public GameObject Jumpscare;
+    public GameObject PlayerCam;
     public Animator JumpScarer;
 
+    public GameObject Menu;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         showUpTimer2 = showUpTimer;
         killTimer2 = killTimer;
+
+        Jumpscare.SetActive(false);
     }
 
     // Update is called once per frame
@@ -111,8 +116,16 @@ public class EnemyBehav : Singleton<EnemyBehav>
     }
     public void kill()
     {
+        active = false;
         print("youDied");
         Model.SetActive(false);
+        Menu.SetActive(false);
+        Jumpscare.SetActive(true);
+
+        PlayerCam.transform.parent = JumpscareCamRef.transform;
+        PlayerCam.transform.position = JumpscareCamRef.transform.position;
+        PlayerCam.transform.rotation = JumpscareCamRef.transform.rotation;
+        Destroy(_GM.activeGame);
     }
 
     public void GoAway()
