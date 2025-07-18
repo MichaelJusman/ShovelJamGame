@@ -87,7 +87,9 @@ public class EnemyBehav : Singleton<EnemyBehav>
     {
         peering = true;
         Model.SetActive(true);
-        ModelAnim.Play("GoUpSide");
+
+        //ModelAnim.Play("GoUpSide");
+
         int ran = Random.Range(0, 4);
         switch (ran)
         {
@@ -114,6 +116,14 @@ public class EnemyBehav : Singleton<EnemyBehav>
             case 4:
                 print("fsdfsdfsdfsdfsdfsdfsdfwg");
                 break;
+        }
+
+        if (ran != 0)
+        {
+            ModelAnim.Play("GoUpSide");
+        } else
+        {
+            ModelAnim.Play("GoUpFront");
         }
     }
     public void kill()
