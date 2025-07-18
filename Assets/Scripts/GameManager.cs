@@ -25,7 +25,8 @@ public class GameManager : Singleton<GameManager>
 
     public float winThresh = 20;
 
-    public Image winBar;
+    public GameObject winBar;
+    public Slider winBarr;
     [Header("Win/Lose")]
     public GameObject WinScreen;
     public GameObject LoseScreen;
@@ -41,6 +42,7 @@ public class GameManager : Singleton<GameManager>
     void Start()
     {
         //StartCoroutine(NewGame(ringOBJ, 1));
+        winBarr.maxValue = winThresh;
     }
 
     // Update is called once per frame
@@ -69,8 +71,9 @@ public class GameManager : Singleton<GameManager>
         Difficulty += 1;
         StartCoroutine(NewGame(ringOBJ, 1));
 
-        winBar.gameObject.SetActive(true);
-        winBar.fillAmount = completed / winThresh;
+        winBar.SetActive(true);
+        winBarr.value = completed;
+       // winBar.fillAmount = completed / winThresh;
 
         if (completed >= winThresh)
         {

@@ -87,6 +87,7 @@ public class EnemyBehav : Singleton<EnemyBehav>
     {
         peering = true;
         Model.SetActive(true);
+        ModelAnim.Play("GoUpSide");
         int ran = Random.Range(0, 4);
         switch (ran)
         {
@@ -140,12 +141,14 @@ public class EnemyBehav : Singleton<EnemyBehav>
         PlayerCam.transform.position = JumpscareCamRef.transform.position;
         PlayerCam.transform.rotation = JumpscareCamRef.transform.rotation;
         Destroy(_GM.activeGame);
+        _GM.inGame = false;
     }
 
 
     public void GoAway()
     {
         Leaving = true;
+        ModelAnim.SetBool("DuckDown", true);
         StartCoroutine(Leave());
 
         if (_TT.ID == 3)
@@ -162,7 +165,8 @@ public class EnemyBehav : Singleton<EnemyBehav>
         
         showUpTimer = (showUpTimer2 + Random.Range(-2, 5));
         killTimer = (killTimer2 + Random.Range(-1, 3));
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
+        ModelAnim.SetBool("DuckDown", false);
         Model.SetActive(false);
         Leaving = false;
     }
