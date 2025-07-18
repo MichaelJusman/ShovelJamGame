@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class GameManager : Singleton<GameManager>
@@ -23,9 +25,18 @@ public class GameManager : Singleton<GameManager>
 
     public float winThresh = 20;
 
+    public Image winBar;
     [Header("Win/Lose")]
     public GameObject WinScreen;
     public GameObject LoseScreen;
+
+    public GameObject car;
+
+    public GameObject playerCma;
+    public GameObject playerCmaRef;
+
+
+    public GameObject UI;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -58,6 +69,9 @@ public class GameManager : Singleton<GameManager>
         Difficulty += 1;
         StartCoroutine(NewGame(ringOBJ, 1));
 
+        winBar.gameObject.SetActive(true);
+        winBar.fillAmount = completed / winThresh;
+
         if (completed >= winThresh)
         {
             PlayerWin();
@@ -83,7 +97,17 @@ public class GameManager : Singleton<GameManager>
 
     public void PlayerWin()
     {
+        Destroy(activeGame);
+        UI.SetActive(false);
+
         _EB.active = false;
+        _EB.gameObject.SetActive(false);
+
+        playerCma.transform.position = playerCmaRef.transform.position;
+        playerCma.transform.rotation = playerCmaRef.transform.rotation;
+        playerCma.transform.parent = playerCmaRef.transform;
+
+        WinScreen.SetActive(true);
     }
 
     public void PlayerLose()
