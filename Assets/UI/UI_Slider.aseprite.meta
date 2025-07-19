@@ -73,7 +73,7 @@ ScriptedImporter:
   previousAsepriteImporterSettings:
     fileImportMode: 1
     importHiddenLayers: 0
-    layerImportMode: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
@@ -86,7 +86,7 @@ ScriptedImporter:
   asepriteImporterSettings:
     fileImportMode: 1
     importHiddenLayers: 0
-    layerImportMode: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 638885550261058597
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -122,19 +122,61 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: UI_Slider
+  - name: Fill
     originalName: 
-    pivot: {x: 0.5, y: -1.2083334}
+    pivot: {x: 0.5, y: -3.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
       x: 4
+      y: 70
+      width: 120
+      height: 20
+    spriteID: c63cc81a1afdc1f4c81756ea30cf6399
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 70}
+  - name: Backrgound
+    originalName: 
+    pivot: {x: 0.5, y: -2.8333333}
+    alignment: 9
+    border: {x: 9, y: 0, z: 9, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 38
+      width: 160
+      height: 24
+    spriteID: 571713e0d6a3d7f43bac9e616a7245ee
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 38}
+  - name: Boarder
+    originalName: 
+    pivot: {x: 0.5, y: -2.5384614}
+    alignment: 9
+    border: {x: 21, y: 4, z: 21, w: 2}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
       y: 4
       width: 160
-      height: 48
-    spriteID: 313f49ea4d3df7c4a966b930f0c29ac0
+      height: 26
+    spriteID: dfd1957200d074a468121b4e49be5199
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -143,24 +185,138 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: Handle3
+    originalName: 
+    pivot: {x: 0.5, y: -1.4523809}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 156
+      y: 70
+      width: 10
+      height: 42
+    spriteID: d2ea6fca74d70cd4684180328e73e4ad
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 156, y: 70}
+  - name: Handle4
+    originalName: 
+    pivot: {x: 0.5000001, y: -1.6315789}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 132
+      y: 70
+      width: 16
+      height: 38
+    spriteID: 598ad4f8a8915994b8f2f109dd4fc9ad
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 132, y: 70}
   spriteSheetImportData: []
   asepriteLayers:
-  - layerIndex: 0
-    guid: -436218972
-    name: UI_Slider
-    layerFlags: 0
+  - layerIndex: 4
+    guid: -1029745145
+    name: Fill
+    layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: UI_Slider
+    - name: Fill
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 20
+        y: 70
+        width: 120
+        height: 20
+      spriteId: c63cc81a1afdc1f4c81756ea30cf6399
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 0
+    guid: 994274180
+    name: Backrgound
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Backrgound
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 0
-        y: 58
+        y: 68
         width: 160
-        height: 48
-      spriteId: 313f49ea4d3df7c4a966b930f0c29ac0
+        height: 24
+      spriteId: 571713e0d6a3d7f43bac9e616a7245ee
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 8
+    guid: 1938052261
+    name: Boarder
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Boarder
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 66
+        width: 160
+        height: 26
+      spriteId: dfd1957200d074a468121b4e49be5199
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 9
+    guid: 281481080
+    name: Handle3
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Handle3
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 75
+        y: 61
+        width: 10
+        height: 42
+      spriteId: d2ea6fca74d70cd4684180328e73e4ad
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 10
+    guid: 281480686
+    name: Handle4
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Handle4
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 72
+        y: 62
+        width: 16
+        height: 38
+      spriteId: 598ad4f8a8915994b8f2f109dd4fc9ad
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -171,6 +327,30 @@ ScriptedImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
     compressionQuality: 50
     forceMaximumCompressionQuality_BC6H_BC7: 0
     crunchedCompression: 0
