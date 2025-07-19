@@ -395,7 +395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a3ffd34de6e814b837ccb2ff4d3b11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spinSpeed: 100
+  spinSpeed: 120
   Spinner: {fileID: 5335716619612989910}
   reff: {fileID: 4213066463672233785}
   rt: {fileID: 6525396369049509594}

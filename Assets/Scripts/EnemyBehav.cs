@@ -39,6 +39,7 @@ public class EnemyBehav : Singleton<EnemyBehav>
     public GameObject Jumpscare;
     public GameObject PlayerCam;
     public Animator JumpScarer;
+    public Animator car;
 
     public GameObject Menu;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -86,6 +87,9 @@ public class EnemyBehav : Singleton<EnemyBehav>
     {
         peering = true;
         Model.SetActive(true);
+
+        //ModelAnim.Play("GoUpSide");
+
         int ran = Random.Range(0, 4);
         switch (ran)
         {
@@ -113,24 +117,48 @@ public class EnemyBehav : Singleton<EnemyBehav>
                 print("fsdfsdfsdfsdfsdfsdfsdfwg");
                 break;
         }
+
+        if (ran != 0)
+        {
+            ModelAnim.Play("GoUpSide");
+        } else
+        {
+            ModelAnim.Play("GoUpFront");
+        }
     }
     public void kill()
     {
         active = false;
-        print("youDied");
+        //print("youDied");
         Model.SetActive(false);
         Menu.SetActive(false);
-        Jumpscare.SetActive(true);
+        StartCoroutine(PlayScare());
+        //Jumpscare.SetActive(true);
 
+        car.Play("GuyInCar");
+
+        /*PlayerCam.transform.parent = JumpscareCamRef.transform;
+        PlayerCam.transform.position = JumpscareCamRef.transform.position;
+        PlayerCam.transform.rotation = JumpscareCamRef.transform.rotation;
+        Destroy(_GM.activeGame);*/
+    }
+    IEnumerator PlayScare()
+    {
+
+        yield return new WaitForSeconds(1);
+        Jumpscare.SetActive(true);
         PlayerCam.transform.parent = JumpscareCamRef.transform;
         PlayerCam.transform.position = JumpscareCamRef.transform.position;
         PlayerCam.transform.rotation = JumpscareCamRef.transform.rotation;
         Destroy(_GM.activeGame);
+        _GM.inGame = false;
     }
+
 
     public void GoAway()
     {
         Leaving = true;
+        ModelAnim.SetBool("DuckDown", true);
         StartCoroutine(Leave());
 
         if (_TT.ID == 3)
@@ -147,7 +175,8 @@ public class EnemyBehav : Singleton<EnemyBehav>
         
         showUpTimer = (showUpTimer2 + Random.Range(-2, 5));
         killTimer = (killTimer2 + Random.Range(-1, 3));
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
+        ModelAnim.SetBool("DuckDown", false);
         Model.SetActive(false);
         Leaving = false;
     }
