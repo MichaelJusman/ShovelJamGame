@@ -25,4 +25,9 @@ public class SceneController : MonoBehaviour
     {
         SceneManager.LoadScene(Menu);
     }
+
+    public void quitt()
+    {
+        Application.Quit();
+    }
 }

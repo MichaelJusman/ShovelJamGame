@@ -2485,6 +2485,19 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7510365129941625660, guid: 272f0ad2ea78814499846ef326126063, type: 3}
   m_PrefabInstance: {fileID: 547206823}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &404428396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404428391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344801206ca211847bb2901000f01c0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Menu: 
 --- !u!1 &406389609
 GameObject:
   m_ObjectHideFlags: 0
@@ -3452,7 +3465,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7510365129941625660, guid: 272f0ad2ea78814499846ef326126063, type: 3}
       insertIndex: -1
       addedObject: {fileID: 22878817}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 525240931632855556, guid: 272f0ad2ea78814499846ef326126063, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 404428396}
   m_SourcePrefab: {fileID: 100100000, guid: 272f0ad2ea78814499846ef326126063, type: 3}
 --- !u!4 &547449505 stripped
 Transform:
@@ -12750,7 +12766,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1643461428}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 404428396}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: quitt
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1643461428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16414,6 +16442,8 @@ MonoBehaviour:
   Dampning: 0
   Battery: 22
   BatteryUI: {fileID: 0}
+  Baudio: {fileID: 0}
+  Baudio2: {fileID: 0}
 --- !u!114 &2036757345
 MonoBehaviour:
   m_ObjectHideFlags: 0

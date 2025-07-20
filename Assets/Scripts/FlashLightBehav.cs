@@ -13,6 +13,9 @@ public class FlashLightBehav : GameBehaiour
     private float Battery2;
 
     public Image BatteryUI;
+
+    public AudioSource Baudio;
+    public AudioSource Baudio2;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

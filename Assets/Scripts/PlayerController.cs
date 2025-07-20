@@ -135,6 +135,7 @@ public class PlayerController : Singleton<PlayerController>
         {
             //print("on");
             FLB.FLight.SetActive(true);
+            FLB.Baudio.Play();
             FOn = true;
         } else
         {
@@ -145,6 +146,7 @@ public class PlayerController : Singleton<PlayerController>
     {
         //print("off");
         FLB.FLight.SetActive(false);
+        FLB.Baudio2.Play();
         FOn = false;
     }
 }
