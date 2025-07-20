@@ -25,6 +25,8 @@ public class RingMinigame : GameBehaiour
     public Image Ring;
     public Image Pointer;
 
+    public AudioSource audW;
+    public AudioSource audL;
     [Header("Pressable")]
     public bool Pressable;
 
@@ -65,11 +67,11 @@ public class RingMinigame : GameBehaiour
 
         if (SpinnerRot > Min && SpinnerRot < Max)
         {
-            Pointer.color = Color.green;
+            Pointer.color = Color.white;
             Pressable = true;
         } else
         {
-            Pointer.color = Color.white;
+            Pointer.color = Color.green;
             Pressable = false;
         }
 
@@ -101,6 +103,7 @@ public class RingMinigame : GameBehaiour
 
     public void Succeed()
     {
+        audW.Play();
         //Instantiate(win, transform.position, transform.rotation, transform.parent);
         _GM.GameBeaten();
         StartCoroutine(DieTimer());
@@ -113,6 +116,7 @@ public class RingMinigame : GameBehaiour
     }
     public void Fail()
     {
+        audL.Play();
         _GM.GameFailed();
         StartCoroutine(DieTimer());
         Follower.SetActive(false);

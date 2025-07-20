@@ -102,6 +102,7 @@ public class GameManager : Singleton<GameManager>
     {
         Destroy(activeGame);
         UI.SetActive(false);
+        car.SetActive(false);
 
         _EB.active = false;
         _EB.gameObject.SetActive(false);
