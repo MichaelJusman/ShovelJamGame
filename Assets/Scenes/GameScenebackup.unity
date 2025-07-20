@@ -3308,7 +3308,7 @@ MonoBehaviour:
   inGame: 1
   completed: 0
   Difficulty: 0
-  winThresh: 1
+  winThresh: 20
   winBar: {fileID: 452467744}
   winBarr: {fileID: 1890693578}
   WinScreen: {fileID: 537752379}

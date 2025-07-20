@@ -62,7 +62,7 @@ public class GameManager : Singleton<GameManager>
         {
             GameObject dsa = Instantiate(ringOBJ, transform.position, transform.rotation, canvass.transform);
             dsa.GetComponent<RingMinigame>().Point = CurrentPoint;
-            dsa.GetComponent<RingMinigame>().spinSpeed += (Difficulty * 3);
+            dsa.GetComponent<RingMinigame>().spinSpeed += (Difficulty * 6);
             activeGame = dsa;
         } 
     }
