@@ -36,6 +36,8 @@ public class GameManager : Singleton<GameManager>
     public GameObject playerCma;
     public GameObject playerCmaRef;
 
+    public GameObject cutsceneEnvironment;
+
 
     public GameObject UI;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -103,6 +105,7 @@ public class GameManager : Singleton<GameManager>
         Destroy(activeGame);
         UI.SetActive(false);
         car.SetActive(false);
+        cutsceneEnvironment.SetActive(true);
 
         _EB.active = false;
         _EB.gameObject.SetActive(false);
