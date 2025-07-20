@@ -71,7 +71,7 @@ public class RingMinigame : GameBehaiour
             Pressable = true;
         } else
         {
-            Pointer.color = Color.green;
+            Pointer.color = Color.red;
             Pressable = false;
         }
 
