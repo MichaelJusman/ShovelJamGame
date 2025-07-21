@@ -22,4 +22,15 @@ public class TutorialToggle : MonoBehaviour
     {
         PlayerPrefs.SetFloat("hasCompletedTutorial", 1);
     }
+
+    public void TutorialTogggle(bool _togl)
+    {
+        if (_togl == true)
+        {
+            PlayerPrefs.SetFloat("hasCompletedTutorial", 0);
+        } else
+        {
+            PlayerPrefs.SetFloat("hasCompletedTutorial", 1);
+        }
+    }
 }
