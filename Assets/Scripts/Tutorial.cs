@@ -19,6 +19,7 @@ public class Tutorial : Singleton<Tutorial>
     public bool done;
 
     public GameObject fakeBUtton;
+    public GameObject lookUp;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -49,6 +50,7 @@ public class Tutorial : Singleton<Tutorial>
 
         if (check == 0)
         {
+            lookUp.SetActive(false);
             for (int i = 0; i < TextBoxes.Length; i++)
             {
                 if (i > 1)
@@ -98,6 +100,7 @@ public class Tutorial : Singleton<Tutorial>
 
             if (ID == 2)
             {
+                lookUp.SetActive(true);
                 _EB.active = true;
                 _EB.ShowUp();
                 _EB.killTimer = 99;

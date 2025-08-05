@@ -13,7 +13,11 @@ public class GameManager : Singleton<GameManager>
     public GameObject canvass;
 
     [Header("Mingames")]
-    public GameObject ringOBJ;
+    public GameObject currentMinigame;
+
+    public GameObject[] gameses;
+    public int cur;
+    public int difTresh = 5;
 
     [Header("Mingames Variables")]
     public GameObject activeGame;
@@ -43,6 +47,7 @@ public class GameManager : Singleton<GameManager>
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        currentMinigame = gameses[0];
         //StartCoroutine(NewGame(ringOBJ, 1));
         winBarr.maxValue = winThresh;
     }
@@ -60,9 +65,12 @@ public class GameManager : Singleton<GameManager>
     {
         if (inGame == true)
         {
-            GameObject dsa = Instantiate(ringOBJ, transform.position, transform.rotation, canvass.transform);
-            dsa.GetComponent<RingMinigame>().Point = CurrentPoint;
-            dsa.GetComponent<RingMinigame>().spinSpeed += (Difficulty * 6);
+            GameObject dsa = Instantiate(currentMinigame, transform.position, transform.rotation, canvass.transform);
+            /*dsa.GetComponent<RingMinigame>().Point = CurrentPoint;
+            dsa.GetComponent<RingMinigame>().spinSpeed += (Difficulty * 6);*/
+            dsa.GetComponent<MinigameSetup>().point = CurrentPoint;
+            dsa.GetComponent<MinigameSetup>().diffuculty = Difficulty;
+            dsa.GetComponent<MinigameSetup>().updateGame();
             activeGame = dsa;
         } 
     }
@@ -71,7 +79,21 @@ public class GameManager : Singleton<GameManager>
     {
         completed += 1;
         Difficulty += 1;
-        StartCoroutine(NewGame(ringOBJ, 1));
+
+        if (Difficulty >= difTresh)
+        {
+            Difficulty = 0;
+            cur += 1;
+            if (cur > gameses.Length - 1)
+            {
+                cur = 0;
+                Difficulty = difTresh;
+                difTresh += difTresh;
+            }
+            currentMinigame = gameses[cur];
+        }
+
+        StartCoroutine(NewGame(currentMinigame, 1));
 
         winBar.SetActive(true);
         winBarr.value = completed;
@@ -85,7 +107,7 @@ public class GameManager : Singleton<GameManager>
 
     public void GameFailed()
     {
-        StartCoroutine(NewGame(ringOBJ, 1));
+        StartCoroutine(NewGame(currentMinigame, 1));
     }
 
     IEnumerator NewGame(GameObject _game, float _delay)

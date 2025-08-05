@@ -128,4 +128,15 @@ public class RingMinigame : GameBehaiour
         Destroy(gameObject);
         yield return null;
     }
+
+    public void recieveVariables1()
+    {
+        Point = GetComponent<MinigameSetup>().point;
+
+        spinSpeed += GetComponent<MinigameSetup>().diffuculty;
+    }
+    /*public void recieveVariables2(float _dif)
+    {
+        spinSpeed = _dif;
+    }*/
 }
