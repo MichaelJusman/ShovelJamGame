@@ -180,4 +180,10 @@ public class EnemyBehav : Singleton<EnemyBehav>
         Model.SetActive(false);
         Leaving = false;
     }
+
+    public void aggrevate()
+    {
+        showUpTimer2 = showUpTimer2 / 1.1f;
+        killTimer2 = killTimer2 / 1.05f;
+    }
 }

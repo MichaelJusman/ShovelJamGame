@@ -91,6 +91,7 @@ public class GameManager : Singleton<GameManager>
                 difTresh += difTresh;
             }
             currentMinigame = gameses[cur];
+            _EB.aggrevate();
         }
 
         StartCoroutine(NewGame(currentMinigame, 1));
