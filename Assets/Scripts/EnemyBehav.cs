@@ -1,3 +1,4 @@
+using NUnit.Framework.Internal;
 using System.Buffers.Text;
 using System.Collections;
 using System.Collections.Generic;
@@ -42,9 +43,23 @@ public class EnemyBehav : Singleton<EnemyBehav>
     public Animator car;
 
     public GameObject Menu;
+
+    public bool angry;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (PlayerPrefs.GetInt("agro") == 1)
+        {
+            angry = true;
+            showUpTimer = showUpTimer / 2;
+            killTimer = killTimer / 1.5f;
+        }
+        /*if (angry == true)
+        {
+            showUpTimer = showUpTimer / 2;
+            killTimer = killTimer / 1.5f;
+        }*/
+
         showUpTimer2 = showUpTimer;
         killTimer2 = killTimer;
 

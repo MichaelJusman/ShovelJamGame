@@ -1,3 +1,4 @@
+using NUnit.Framework.Internal;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,6 +20,11 @@ public class FlashLightBehav : GameBehaiour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (PlayerPrefs.GetInt("batt") == 1)
+        {
+            Battery = Battery / 3;
+        }
+
         Battery2 = Battery;
     }
 

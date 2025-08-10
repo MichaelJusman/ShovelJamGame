@@ -44,9 +44,22 @@ public class GameManager : Singleton<GameManager>
 
 
     public GameObject UI;
+
+    [Header("Challenges")]
+    public bool randomise;
+    public GameObject rain;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (PlayerPrefs.GetInt("rando") == 1)
+        {
+            randomise = true;
+        }
+        if (PlayerPrefs.GetInt("rainn") == 1)
+        {
+            rain.SetActive(true);
+        }
+
         currentMinigame = gameses[0];
         //StartCoroutine(NewGame(ringOBJ, 1));
         winBarr.maxValue = winThresh;
@@ -92,6 +105,10 @@ public class GameManager : Singleton<GameManager>
             }
             currentMinigame = gameses[cur];
             _EB.aggrevate();
+        }
+        if (randomise == true)
+        {
+            currentMinigame = gameses[Random.Range(0, gameses.Length)];
         }
 
         StartCoroutine(NewGame(currentMinigame, 1));

@@ -2890,6 +2890,7 @@ MonoBehaviour:
   JumpScarer: {fileID: 1487628337}
   car: {fileID: 1976615329}
   Menu: {fileID: 1433191283816054654}
+  angry: 0
 --- !u!4 &127026643
 Transform:
   m_ObjectHideFlags: 0
@@ -3908,6 +3909,8 @@ MonoBehaviour:
   playerCmaRef: {fileID: 1477674909}
   cutsceneEnvironment: {fileID: 973835332}
   UI: {fileID: 525240931103083683}
+  randomise: 0
+  rain: {fileID: 538151143}
 --- !u!4 &173182754
 Transform:
   m_ObjectHideFlags: 0
@@ -11266,7 +11269,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1818360608 &538151144
 PositionConstraint:
   m_ObjectHideFlags: 0
