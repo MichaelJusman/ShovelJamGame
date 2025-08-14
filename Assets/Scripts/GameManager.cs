@@ -21,6 +21,7 @@ public class GameManager : Singleton<GameManager>
 
     [Header("Mingames Variables")]
     public GameObject activeGame;
+    public GameObject[] potentialPoints;
     public GameObject CurrentPoint;
     public bool inGame;
 
@@ -44,6 +45,9 @@ public class GameManager : Singleton<GameManager>
 
 
     public GameObject UI;
+
+    [Header("Misc")]
+    public Animator playerAnim;
 
     [Header("Challenges")]
     public bool randomise;
@@ -104,11 +108,18 @@ public class GameManager : Singleton<GameManager>
                 difTresh += difTresh;
             }
             currentMinigame = gameses[cur];
+            CurrentPoint = potentialPoints[cur];
             _EB.aggrevate();
+
+            playerAnim.SetInteger("pos", cur);
         }
         if (randomise == true)
         {
-            currentMinigame = gameses[Random.Range(0, gameses.Length)];
+            int ran = Random.Range(0, gameses.Length);
+
+            currentMinigame = gameses[ran];
+            CurrentPoint = potentialPoints[ran];
+            playerAnim.SetInteger("pos", ran);
         }
 
         StartCoroutine(NewGame(currentMinigame, 1));
