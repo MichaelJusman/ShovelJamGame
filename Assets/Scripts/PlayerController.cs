@@ -23,6 +23,7 @@ public class PlayerController : Singleton<PlayerController>
     public GameObject CurrentRef;
     public float LerpSPeed;
 
+    public bool movable;
     [Header("FlashLight")]
     public FlashLightBehav FLB;
     public bool FOn;
@@ -71,9 +72,21 @@ public class PlayerController : Singleton<PlayerController>
             {
                 LookAtDirection(RightRef, Facing.Right);
             }
+
+            if (Input.GetKeyDown(KeyCode.Space) && movable == true)
+            {
+                GoDown();
+                movable = false;
+            }
+        } else
+        {
+            if (Input.GetKeyDown(KeyCode.Space) && movable == true)
+            {
+                GoUp();
+                movable = false;
+            }
         }
 
-        
     }
 
     public void GoDown()
@@ -152,5 +165,10 @@ public class PlayerController : Singleton<PlayerController>
         FLB.FLight.SetActive(false);
         FLB.Baudio2.Play();
         FOn = false;
+    }
+
+    public void reesetMove()
+    {
+        movable = true;
     }
 }
