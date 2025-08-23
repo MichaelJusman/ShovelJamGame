@@ -23,6 +23,7 @@ public class PlayerController : Singleton<PlayerController>
     public GameObject CurrentRef;
     public float LerpSPeed;
 
+    public bool movable;
     [Header("FlashLight")]
     public FlashLightBehav FLB;
     public bool FOn;
@@ -32,7 +33,7 @@ public class PlayerController : Singleton<PlayerController>
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -53,23 +54,39 @@ public class PlayerController : Singleton<PlayerController>
 
         Pivot.transform.rotation = Quaternion.Lerp(Pivot.transform.rotation, CurrentRef.transform.rotation, LerpSPeed * Time.deltaTime);
         Pivot.transform.position = Vector3.Lerp(Pivot.transform.position, CurrentRef.transform.position, LerpSPeed * Time.deltaTime);
+        if (OnKey == false)
+        {
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+            {
+                LookAtDirection(FrontRef, Facing.Fowards);
+            }
+            if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+            {
+                LookAtDirection(BackRef, Facing.Back);
+            }
+            if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
+            {
+                LookAtDirection(LeftRef, Facing.Left);
+            }
+            if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
+            {
+                LookAtDirection(RightRef, Facing.Right);
+            }
 
-        /*if (Input.GetKeyDown (KeyCode.UpArrow))
+            if (Input.GetKeyDown(KeyCode.Space) && movable == true)
+            {
+                GoDown();
+                movable = false;
+            }
+        } else
         {
-            LookAtDirection(FrontRef, Facing.Fowards);
+            if (Input.GetKeyDown(KeyCode.Space) && movable == true)
+            {
+                GoUp();
+                movable = false;
+            }
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            LookAtDirection(BackRef, Facing.Back);
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            LookAtDirection(LeftRef, Facing.Left);
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            LookAtDirection(RightRef, Facing.Right);
-        }*/
+
     }
 
     public void GoDown()
@@ -148,5 +165,10 @@ public class PlayerController : Singleton<PlayerController>
         FLB.FLight.SetActive(false);
         FLB.Baudio2.Play();
         FOn = false;
+    }
+
+    public void reesetMove()
+    {
+        movable = true;
     }
 }
