@@ -154,6 +154,7 @@ public class PlayerController : Singleton<PlayerController>
             FLB.FLight.SetActive(true);
             FLB.Baudio.Play();
             FOn = true;
+            FLB.BatteryUI.color = Color.white;
         } else
         {
             flashOff();
@@ -165,6 +166,7 @@ public class PlayerController : Singleton<PlayerController>
         FLB.FLight.SetActive(false);
         FLB.Baudio2.Play();
         FOn = false;
+        FLB.BatteryUI.color = FLB.BatCol;
     }
 
     public void reesetMove()
