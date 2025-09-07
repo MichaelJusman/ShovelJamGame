@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9090539813239823958}
   - component: {fileID: 7925175565476191679}
   - component: {fileID: 4965369647486134662}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Decal Projector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: eed82647a8e398943b2fb03b49e63b68, type: 2}
+  m_Material: {fileID: 2100000, guid: 66217af6333196e4e8a3c8c9a7e7a8b4, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 1
   m_StartAngleFade: 0
