@@ -11559,7 +11559,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 564219181624537417, guid: 272f0ad2ea78814499846ef326126063, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 920386945284071573, guid: 272f0ad2ea78814499846ef326126063, type: 3}
       propertyPath: m_Sprite
@@ -11697,6 +11697,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2590231676158998898, guid: 272f0ad2ea78814499846ef326126063, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3281017021646651457, guid: 272f0ad2ea78814499846ef326126063, type: 3}
       propertyPath: m_fontSize
       value: 24.67
@@ -11758,8 +11762,24 @@ PrefabInstance:
       value: flashOff
       objectReference: {fileID: 0}
     - target: {fileID: 3670229343052130027, guid: 272f0ad2ea78814499846ef326126063, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670229343052130027, guid: 272f0ad2ea78814499846ef326126063, type: 3}
+      propertyPath: m_Pivot.y
+      value: 1.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670229343052130027, guid: 272f0ad2ea78814499846ef326126063, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -58.87143
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670229343052130027, guid: 272f0ad2ea78814499846ef326126063, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -20
+      value: 4.6521606
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670229343052130027, guid: 272f0ad2ea78814499846ef326126063, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3839944010482131891, guid: 272f0ad2ea78814499846ef326126063, type: 3}
       propertyPath: m_hasFontAssetChanged
@@ -11800,6 +11820,10 @@ PrefabInstance:
     - target: {fileID: 4274120836583536138, guid: 272f0ad2ea78814499846ef326126063, type: 3}
       propertyPath: m_Name
       value: Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 4274120836583536138, guid: 272f0ad2ea78814499846ef326126063, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4905156043522776545, guid: 272f0ad2ea78814499846ef326126063, type: 3}
       propertyPath: m_LocalRotation.w
@@ -64118,8 +64142,12 @@ MonoBehaviour:
   Dampning: 0
   Battery: 15
   BatteryUI: {fileID: 3403660856184339851}
+  BatteryUIHolder: {fileID: 1988767921}
+  shakeSpeed: 0
+  shakeSize: 0
   Baudio: {fileID: 1769949074}
   Baudio2: {fileID: 649779171}
+  BatCol: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &2036757345
 MonoBehaviour:
   m_ObjectHideFlags: 0
