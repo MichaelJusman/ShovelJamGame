@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3339da7818ba3904e8f3825870d00940
+guid: 11b622da733451f48b27e9abe65c565e
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638937389076651144
+  platformSettingsDirtyTick: 638937384434393312
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -122,9 +122,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Backrgound
+  - name: Base
     originalName: 
-    pivot: {x: 0.5, y: -0.75}
+    pivot: {x: 0.5, y: -0.31632653}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -132,9 +132,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 160
-      height: 64
-    spriteID: bc7c38a6a4647a344a60083d3b3b8db7
+      width: 98
+      height: 98
+    spriteID: 54f5239ba9085d444a8ba8448145e318
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -145,17 +145,17 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: Fill
     originalName: 
-    pivot: {x: 0.5, y: -0.9285714}
+    pivot: {x: 0.5, y: -0.31632653}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
       x: 4
-      y: 148
-      width: 152
-      height: 56
-    spriteID: 1c92b00f6e86a224ba30f61265b6618a
+      y: 110
+      width: 98
+      height: 98
+    spriteID: e09a54d7fcb437443998cc4d25b2dc6e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -163,83 +163,20 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 148}
-  - name: Border
+    uvTransform: {x: 4, y: 110}
+  - name: Icon
     originalName: 
-    pivot: {x: 0.5, y: -0.75}
-    alignment: 9
-    border: {x: 4, y: 4, z: 4, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 76
-      width: 160
-      height: 64
-    spriteID: 488a3d5784c47214c80802a6cfb58689
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 76}
-  - name: Handle
-    originalName: 
-    pivot: {x: 0.4999999, y: -0.39534885}
+    pivot: {x: 0.029850718, y: -0.012658228}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
-      x: 62
-      y: 299
-      width: 24
-      height: 86
-    spriteID: ec20b22ff931443459a6bc43f8c75534
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 62, y: 299}
-  - name: Lose Icon
-    originalName: 
-    pivot: {x: 0.5, y: -0.2970297}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 299
-      width: 50
-      height: 101
-    spriteID: 0e1b7306d6786f04aa91f3d6bd13ccb5
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 299}
-  - name: Win Icon
-    originalName: 
-    pivot: {x: 0.49999997, y: -0.56962025}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 212
-      width: 92
+      x: 110
+      y: 4
+      width: 67
       height: 79
-    spriteID: 9c3ec70a9081de746880ac0e53500879
+    spriteID: 758188d6aa2f76b478f072f1c3424da5
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -247,25 +184,46 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 212}
+    uvTransform: {x: 110, y: 4}
+  - name: Crossair
+    originalName: 
+    pivot: {x: 0.49999952, y: -19.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 216
+      width: 4
+      height: 4
+    spriteID: 71225805eb1a37644b5e008af972dea0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 216}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 994274180
-    name: Backrgound
+    guid: 885305061
+    name: Base
     layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: Backrgound
+    - name: Base
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 0
-        y: 48
-        width: 160
-        height: 64
-      spriteId: bc7c38a6a4647a344a60083d3b3b8db7
+        x: 31
+        y: 31
+        width: 98
+        height: 98
+      spriteId: 54f5239ba9085d444a8ba8448145e318
     linkedCells: []
     parentIndex: -1
   - layerIndex: 1
@@ -279,83 +237,47 @@ ScriptedImporter:
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 4
-        y: 52
-        width: 152
-        height: 56
-      spriteId: 1c92b00f6e86a224ba30f61265b6618a
+        x: 31
+        y: 31
+        width: 98
+        height: 98
+      spriteId: e09a54d7fcb437443998cc4d25b2dc6e
     linkedCells: []
     parentIndex: -1
   - layerIndex: 2
-    guid: -1021105586
-    name: Border
+    guid: 1092031373
+    name: Icon
     layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: Border
+    - name: Icon
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 0
-        y: 48
-        width: 160
-        height: 64
-      spriteId: 488a3d5784c47214c80802a6cfb58689
+        x: 78
+        y: 1
+        width: 67
+        height: 79
+      spriteId: 758188d6aa2f76b478f072f1c3424da5
     linkedCells: []
     parentIndex: -1
   - layerIndex: 3
-    guid: -690508469
-    name: Handle
+    guid: -1733216083
+    name: Crossair
     layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: Handle
+    - name: Crossair
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 68
-        y: 34
-        width: 24
-        height: 86
-      spriteId: ec20b22ff931443459a6bc43f8c75534
-    linkedCells: []
-    parentIndex: -1
-  - layerIndex: 4
-    guid: 632160784
-    name: Lose Icon
-    layerFlags: 3
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: Lose Icon
-      frameIndex: 0
-      additiveSortOrder: 0
-      cellRect:
-        x: 55
-        y: 30
-        width: 50
-        height: 101
-      spriteId: 0e1b7306d6786f04aa91f3d6bd13ccb5
-    linkedCells: []
-    parentIndex: -1
-  - layerIndex: 5
-    guid: -748376266
-    name: Win Icon
-    layerFlags: 3
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: Win Icon
-      frameIndex: 0
-      additiveSortOrder: 0
-      cellRect:
-        x: 34
-        y: 45
-        width: 92
-        height: 79
-      spriteId: 9c3ec70a9081de746880ac0e53500879
+        x: 78
+        y: 78
+        width: 4
+        height: 4
+      spriteId: 71225805eb1a37644b5e008af972dea0
     linkedCells: []
     parentIndex: -1
   platformSettings:
